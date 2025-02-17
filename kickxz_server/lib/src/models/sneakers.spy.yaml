@@ -1,0 +1,19 @@
+class: Sneakers
+table: sneakers
+fields:
+  name: String
+  price: double
+  brand: String
+  size: double
+  colorway: String
+  image: String
+  description: String
+  category: String
+  gender: String
+  stock: int
+  styleCode: String
+  technology: String
+  mainImageUrl: String
+  createdAt: DateTime
+  updatedAt: DateTime?
+  deletedAt: DateTime?

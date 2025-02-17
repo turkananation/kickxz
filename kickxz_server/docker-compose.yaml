@@ -1,0 +1,54 @@
+services:
+  # Development services
+  postgres:
+    image: postgres:16.3
+    ports:
+      - '8090:5432'
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_DB: kickxz
+      POSTGRES_PASSWORD: "tJr1pBbwMuec0SLipbuKDwmXWRkbqUSd"
+    volumes:
+      - kickxz_data:/var/lib/postgresql/data
+    profiles:
+      - '' # Default profile
+      - dev
+  redis:
+    image: redis:6.2.6
+    ports:
+      - '8091:6379'
+    command: redis-server --requirepass "nUuKSW4wL-m7iWAUasSL7KxOBGvyvSxz"
+    environment:
+      - REDIS_REPLICATION_MODE=master
+    profiles:
+      - '' # Default profile
+      - dev
+
+  # Test services
+  postgres_test:
+    image: postgres:16.3
+    ports:
+      - '9090:5432'
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_DB: kickxz_test
+      POSTGRES_PASSWORD: "KduodfwZKN7OrLyvG3A8hUWFcfKbaK9R"
+    volumes:
+      - kickxz_test_data:/var/lib/postgresql/data
+    profiles:
+      - '' # Default profile
+      - test
+  redis_test:
+    image: redis:6.2.6
+    ports:
+      - '9091:6379'
+    command: redis-server --requirepass "fYvIGjESO5aj_N2r8JiKTtA-GKJ4Ckh7"
+    environment:
+      - REDIS_REPLICATION_MODE=master
+    profiles:
+      - '' # Default profile
+      - test
+
+volumes:
+  kickxz_data:
+  kickxz_test_data:
