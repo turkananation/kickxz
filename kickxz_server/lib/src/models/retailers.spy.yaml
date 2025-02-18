@@ -1,0 +1,12 @@
+class: Retailers
+table: retailers
+fields:
+    retailerName: String
+    websiteUrl: String
+    logo: String
+    country: String
+    officialRetailer: bool
+    officialApiAvailable: bool
+    createdAt: DateTime
+    updatedAt: DateTime?
+    deletedAt: DateTime?
