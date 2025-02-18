@@ -1,0 +1,19 @@
+releases:
+  - getAllReleases:
+  - createReleases:
+  - getReleases:
+  - updateReleases:
+  - deleteReleases:
+retailers:
+  - getAllRetailers:
+  - createRetailers:
+  - getRetailers:
+  - updateRetailers:
+  - deleteRetailers:
+sneaker:
+  - getAllSneakers:
+  - createSneaker:
+  - getSneaker:
+  - updateSneaker:
+  - deleteSneaker:
+  - addSneakersManually:

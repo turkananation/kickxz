@@ -16,6 +16,7 @@ abstract class Sneaker implements _i1.SerializableModel {
     this.id,
     required this.name,
     required this.price,
+    required this.currency,
     required this.brand,
     required this.size,
     required this.colorway,
@@ -36,6 +37,7 @@ abstract class Sneaker implements _i1.SerializableModel {
     int? id,
     required String name,
     required double price,
+    required String currency,
     required String brand,
     required double size,
     required String colorway,
@@ -57,6 +59,7 @@ abstract class Sneaker implements _i1.SerializableModel {
       id: jsonSerialization['id'] as int?,
       name: jsonSerialization['name'] as String,
       price: (jsonSerialization['price'] as num).toDouble(),
+      currency: jsonSerialization['currency'] as String,
       brand: jsonSerialization['brand'] as String,
       size: (jsonSerialization['size'] as num).toDouble(),
       colorway: jsonSerialization['colorway'] as String,
@@ -87,6 +90,8 @@ abstract class Sneaker implements _i1.SerializableModel {
   String name;
 
   double price;
+
+  String currency;
 
   String brand;
 
@@ -120,6 +125,7 @@ abstract class Sneaker implements _i1.SerializableModel {
     int? id,
     String? name,
     double? price,
+    String? currency,
     String? brand,
     double? size,
     String? colorway,
@@ -141,6 +147,7 @@ abstract class Sneaker implements _i1.SerializableModel {
       if (id != null) 'id': id,
       'name': name,
       'price': price,
+      'currency': currency,
       'brand': brand,
       'size': size,
       'colorway': colorway,
@@ -171,6 +178,7 @@ class _SneakerImpl extends Sneaker {
     int? id,
     required String name,
     required double price,
+    required String currency,
     required String brand,
     required double size,
     required String colorway,
@@ -189,6 +197,7 @@ class _SneakerImpl extends Sneaker {
           id: id,
           name: name,
           price: price,
+          currency: currency,
           brand: brand,
           size: size,
           colorway: colorway,
@@ -210,6 +219,7 @@ class _SneakerImpl extends Sneaker {
     Object? id = _Undefined,
     String? name,
     double? price,
+    String? currency,
     String? brand,
     double? size,
     String? colorway,
@@ -229,6 +239,7 @@ class _SneakerImpl extends Sneaker {
       id: id is int? ? id : this.id,
       name: name ?? this.name,
       price: price ?? this.price,
+      currency: currency ?? this.currency,
       brand: brand ?? this.brand,
       size: size ?? this.size,
       colorway: colorway ?? this.colorway,
