@@ -1,5 +1,5 @@
-class: Sneakers
-table: sneakers
+class: Sneaker
+table: sneaker
 fields:
   name: String
   price: double
