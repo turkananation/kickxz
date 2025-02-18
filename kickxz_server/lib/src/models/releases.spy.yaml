@@ -1,0 +1,14 @@
+class: Releases
+table: releases
+fields:
+    sneakerId: int, relation(parent=sneaker)
+    retailerId: int, relation(parent=retailers)
+    releaseDateTime: DateTime
+    region: String
+    retailPrice: double
+    currency: String
+    available: bool
+    confirmed: bool
+    createdAt: DateTime
+    updatedAt: DateTime?
+    deletedAt: DateTime?
