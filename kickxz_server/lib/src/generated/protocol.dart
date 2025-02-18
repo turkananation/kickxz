@@ -11,10 +11,8 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:serverpod/serverpod.dart' as _i1;
 import 'package:serverpod/protocol.dart' as _i2;
-import 'example.dart' as _i3;
-import 'sneakers.dart' as _i4;
-export 'example.dart';
-export 'sneakers.dart';
+import 'sneaker.dart' as _i3;
+export 'sneaker.dart';
 
 class Protocol extends _i1.SerializationManagerServer {
   Protocol._();
@@ -25,8 +23,8 @@ class Protocol extends _i1.SerializationManagerServer {
 
   static final List<_i2.TableDefinition> targetTableDefinitions = [
     _i2.TableDefinition(
-      name: 'sneakers',
-      dartName: 'Sneakers',
+      name: 'sneaker',
+      dartName: 'Sneaker',
       schema: 'public',
       module: 'kickxz',
       columns: [
@@ -35,7 +33,7 @@ class Protocol extends _i1.SerializationManagerServer {
           columnType: _i2.ColumnType.bigint,
           isNullable: false,
           dartType: 'int?',
-          columnDefault: 'nextval(\'sneakers_id_seq\'::regclass)',
+          columnDefault: 'nextval(\'sneaker_id_seq\'::regclass)',
         ),
         _i2.ColumnDefinition(
           name: 'name',
@@ -137,7 +135,7 @@ class Protocol extends _i1.SerializationManagerServer {
       foreignKeys: [],
       indexes: [
         _i2.IndexDefinition(
-          indexName: 'sneakers_pkey',
+          indexName: 'sneaker_pkey',
           tableSpace: null,
           elements: [
             _i2.IndexElementDefinition(
@@ -161,17 +159,11 @@ class Protocol extends _i1.SerializationManagerServer {
     Type? t,
   ]) {
     t ??= T;
-    if (t == _i3.Example) {
-      return _i3.Example.fromJson(data) as T;
+    if (t == _i3.Sneaker) {
+      return _i3.Sneaker.fromJson(data) as T;
     }
-    if (t == _i4.Sneakers) {
-      return _i4.Sneakers.fromJson(data) as T;
-    }
-    if (t == _i1.getType<_i3.Example?>()) {
-      return (data != null ? _i3.Example.fromJson(data) : null) as T;
-    }
-    if (t == _i1.getType<_i4.Sneakers?>()) {
-      return (data != null ? _i4.Sneakers.fromJson(data) : null) as T;
+    if (t == _i1.getType<_i3.Sneaker?>()) {
+      return (data != null ? _i3.Sneaker.fromJson(data) : null) as T;
     }
     try {
       return _i2.Protocol().deserialize<T>(data, t);
@@ -183,11 +175,8 @@ class Protocol extends _i1.SerializationManagerServer {
   String? getClassNameForObject(Object? data) {
     String? className = super.getClassNameForObject(data);
     if (className != null) return className;
-    if (data is _i3.Example) {
-      return 'Example';
-    }
-    if (data is _i4.Sneakers) {
-      return 'Sneakers';
+    if (data is _i3.Sneaker) {
+      return 'Sneaker';
     }
     className = _i2.Protocol().getClassNameForObject(data);
     if (className != null) {
@@ -202,11 +191,8 @@ class Protocol extends _i1.SerializationManagerServer {
     if (dataClassName is! String) {
       return super.deserializeByClassName(data);
     }
-    if (dataClassName == 'Example') {
-      return deserialize<_i3.Example>(data['data']);
-    }
-    if (dataClassName == 'Sneakers') {
-      return deserialize<_i4.Sneakers>(data['data']);
+    if (dataClassName == 'Sneaker') {
+      return deserialize<_i3.Sneaker>(data['data']);
     }
     if (dataClassName.startsWith('serverpod.')) {
       data['className'] = dataClassName.substring(10);
@@ -224,8 +210,8 @@ class Protocol extends _i1.SerializationManagerServer {
       }
     }
     switch (t) {
-      case _i4.Sneakers:
-        return _i4.Sneakers.t;
+      case _i3.Sneaker:
+        return _i3.Sneaker.t;
     }
     return null;
   }

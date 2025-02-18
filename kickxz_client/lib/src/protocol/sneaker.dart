@@ -11,8 +11,8 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:serverpod_client/serverpod_client.dart' as _i1;
 
-abstract class Sneakers implements _i1.SerializableModel {
-  Sneakers._({
+abstract class Sneaker implements _i1.SerializableModel {
+  Sneaker._({
     this.id,
     required this.name,
     required this.price,
@@ -32,7 +32,7 @@ abstract class Sneakers implements _i1.SerializableModel {
     this.deletedAt,
   });
 
-  factory Sneakers({
+  factory Sneaker({
     int? id,
     required String name,
     required double price,
@@ -50,10 +50,10 @@ abstract class Sneakers implements _i1.SerializableModel {
     required DateTime createdAt,
     DateTime? updatedAt,
     DateTime? deletedAt,
-  }) = _SneakersImpl;
+  }) = _SneakerImpl;
 
-  factory Sneakers.fromJson(Map<String, dynamic> jsonSerialization) {
-    return Sneakers(
+  factory Sneaker.fromJson(Map<String, dynamic> jsonSerialization) {
+    return Sneaker(
       id: jsonSerialization['id'] as int?,
       name: jsonSerialization['name'] as String,
       price: (jsonSerialization['price'] as num).toDouble(),
@@ -116,7 +116,7 @@ abstract class Sneakers implements _i1.SerializableModel {
 
   DateTime? deletedAt;
 
-  Sneakers copyWith({
+  Sneaker copyWith({
     int? id,
     String? name,
     double? price,
@@ -166,8 +166,8 @@ abstract class Sneakers implements _i1.SerializableModel {
 
 class _Undefined {}
 
-class _SneakersImpl extends Sneakers {
-  _SneakersImpl({
+class _SneakerImpl extends Sneaker {
+  _SneakerImpl({
     int? id,
     required String name,
     required double price,
@@ -206,7 +206,7 @@ class _SneakersImpl extends Sneakers {
         );
 
   @override
-  Sneakers copyWith({
+  Sneaker copyWith({
     Object? id = _Undefined,
     String? name,
     double? price,
@@ -225,7 +225,7 @@ class _SneakersImpl extends Sneakers {
     Object? updatedAt = _Undefined,
     Object? deletedAt = _Undefined,
   }) {
-    return Sneakers(
+    return Sneaker(
       id: id is int? ? id : this.id,
       name: name ?? this.name,
       price: price ?? this.price,

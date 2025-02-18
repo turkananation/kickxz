@@ -11,8 +11,8 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:serverpod/serverpod.dart' as _i1;
 
-abstract class Sneakers implements _i1.TableRow, _i1.ProtocolSerialization {
-  Sneakers._({
+abstract class Sneaker implements _i1.TableRow, _i1.ProtocolSerialization {
+  Sneaker._({
     this.id,
     required this.name,
     required this.price,
@@ -32,7 +32,7 @@ abstract class Sneakers implements _i1.TableRow, _i1.ProtocolSerialization {
     this.deletedAt,
   });
 
-  factory Sneakers({
+  factory Sneaker({
     int? id,
     required String name,
     required double price,
@@ -50,10 +50,10 @@ abstract class Sneakers implements _i1.TableRow, _i1.ProtocolSerialization {
     required DateTime createdAt,
     DateTime? updatedAt,
     DateTime? deletedAt,
-  }) = _SneakersImpl;
+  }) = _SneakerImpl;
 
-  factory Sneakers.fromJson(Map<String, dynamic> jsonSerialization) {
-    return Sneakers(
+  factory Sneaker.fromJson(Map<String, dynamic> jsonSerialization) {
+    return Sneaker(
       id: jsonSerialization['id'] as int?,
       name: jsonSerialization['name'] as String,
       price: (jsonSerialization['price'] as num).toDouble(),
@@ -79,9 +79,9 @@ abstract class Sneakers implements _i1.TableRow, _i1.ProtocolSerialization {
     );
   }
 
-  static final t = SneakersTable();
+  static final t = SneakerTable();
 
-  static const db = SneakersRepository._();
+  static const db = SneakerRepository._();
 
   @override
   int? id;
@@ -121,7 +121,7 @@ abstract class Sneakers implements _i1.TableRow, _i1.ProtocolSerialization {
   @override
   _i1.Table get table => t;
 
-  Sneakers copyWith({
+  Sneaker copyWith({
     int? id,
     String? name,
     double? price,
@@ -186,26 +186,26 @@ abstract class Sneakers implements _i1.TableRow, _i1.ProtocolSerialization {
     };
   }
 
-  static SneakersInclude include() {
-    return SneakersInclude._();
+  static SneakerInclude include() {
+    return SneakerInclude._();
   }
 
-  static SneakersIncludeList includeList({
-    _i1.WhereExpressionBuilder<SneakersTable>? where,
+  static SneakerIncludeList includeList({
+    _i1.WhereExpressionBuilder<SneakerTable>? where,
     int? limit,
     int? offset,
-    _i1.OrderByBuilder<SneakersTable>? orderBy,
+    _i1.OrderByBuilder<SneakerTable>? orderBy,
     bool orderDescending = false,
-    _i1.OrderByListBuilder<SneakersTable>? orderByList,
-    SneakersInclude? include,
+    _i1.OrderByListBuilder<SneakerTable>? orderByList,
+    SneakerInclude? include,
   }) {
-    return SneakersIncludeList._(
+    return SneakerIncludeList._(
       where: where,
       limit: limit,
       offset: offset,
-      orderBy: orderBy?.call(Sneakers.t),
+      orderBy: orderBy?.call(Sneaker.t),
       orderDescending: orderDescending,
-      orderByList: orderByList?.call(Sneakers.t),
+      orderByList: orderByList?.call(Sneaker.t),
       include: include,
     );
   }
@@ -218,8 +218,8 @@ abstract class Sneakers implements _i1.TableRow, _i1.ProtocolSerialization {
 
 class _Undefined {}
 
-class _SneakersImpl extends Sneakers {
-  _SneakersImpl({
+class _SneakerImpl extends Sneaker {
+  _SneakerImpl({
     int? id,
     required String name,
     required double price,
@@ -258,7 +258,7 @@ class _SneakersImpl extends Sneakers {
         );
 
   @override
-  Sneakers copyWith({
+  Sneaker copyWith({
     Object? id = _Undefined,
     String? name,
     double? price,
@@ -277,7 +277,7 @@ class _SneakersImpl extends Sneakers {
     Object? updatedAt = _Undefined,
     Object? deletedAt = _Undefined,
   }) {
-    return Sneakers(
+    return Sneaker(
       id: id is int? ? id : this.id,
       name: name ?? this.name,
       price: price ?? this.price,
@@ -299,8 +299,8 @@ class _SneakersImpl extends Sneakers {
   }
 }
 
-class SneakersTable extends _i1.Table {
-  SneakersTable({super.tableRelation}) : super(tableName: 'sneakers') {
+class SneakerTable extends _i1.Table {
+  SneakerTable({super.tableRelation}) : super(tableName: 'sneaker') {
     name = _i1.ColumnString(
       'name',
       this,
@@ -421,19 +421,19 @@ class SneakersTable extends _i1.Table {
       ];
 }
 
-class SneakersInclude extends _i1.IncludeObject {
-  SneakersInclude._();
+class SneakerInclude extends _i1.IncludeObject {
+  SneakerInclude._();
 
   @override
   Map<String, _i1.Include?> get includes => {};
 
   @override
-  _i1.Table get table => Sneakers.t;
+  _i1.Table get table => Sneaker.t;
 }
 
-class SneakersIncludeList extends _i1.IncludeList {
-  SneakersIncludeList._({
-    _i1.WhereExpressionBuilder<SneakersTable>? where,
+class SneakerIncludeList extends _i1.IncludeList {
+  SneakerIncludeList._({
+    _i1.WhereExpressionBuilder<SneakerTable>? where,
     super.limit,
     super.offset,
     super.orderBy,
@@ -441,33 +441,33 @@ class SneakersIncludeList extends _i1.IncludeList {
     super.orderByList,
     super.include,
   }) {
-    super.where = where?.call(Sneakers.t);
+    super.where = where?.call(Sneaker.t);
   }
 
   @override
   Map<String, _i1.Include?> get includes => include?.includes ?? {};
 
   @override
-  _i1.Table get table => Sneakers.t;
+  _i1.Table get table => Sneaker.t;
 }
 
-class SneakersRepository {
-  const SneakersRepository._();
+class SneakerRepository {
+  const SneakerRepository._();
 
-  Future<List<Sneakers>> find(
+  Future<List<Sneaker>> find(
     _i1.Session session, {
-    _i1.WhereExpressionBuilder<SneakersTable>? where,
+    _i1.WhereExpressionBuilder<SneakerTable>? where,
     int? limit,
     int? offset,
-    _i1.OrderByBuilder<SneakersTable>? orderBy,
+    _i1.OrderByBuilder<SneakerTable>? orderBy,
     bool orderDescending = false,
-    _i1.OrderByListBuilder<SneakersTable>? orderByList,
+    _i1.OrderByListBuilder<SneakerTable>? orderByList,
     _i1.Transaction? transaction,
   }) async {
-    return session.db.find<Sneakers>(
-      where: where?.call(Sneakers.t),
-      orderBy: orderBy?.call(Sneakers.t),
-      orderByList: orderByList?.call(Sneakers.t),
+    return session.db.find<Sneaker>(
+      where: where?.call(Sneaker.t),
+      orderBy: orderBy?.call(Sneaker.t),
+      orderByList: orderByList?.call(Sneaker.t),
       orderDescending: orderDescending,
       limit: limit,
       offset: offset,
@@ -475,125 +475,125 @@ class SneakersRepository {
     );
   }
 
-  Future<Sneakers?> findFirstRow(
+  Future<Sneaker?> findFirstRow(
     _i1.Session session, {
-    _i1.WhereExpressionBuilder<SneakersTable>? where,
+    _i1.WhereExpressionBuilder<SneakerTable>? where,
     int? offset,
-    _i1.OrderByBuilder<SneakersTable>? orderBy,
+    _i1.OrderByBuilder<SneakerTable>? orderBy,
     bool orderDescending = false,
-    _i1.OrderByListBuilder<SneakersTable>? orderByList,
+    _i1.OrderByListBuilder<SneakerTable>? orderByList,
     _i1.Transaction? transaction,
   }) async {
-    return session.db.findFirstRow<Sneakers>(
-      where: where?.call(Sneakers.t),
-      orderBy: orderBy?.call(Sneakers.t),
-      orderByList: orderByList?.call(Sneakers.t),
+    return session.db.findFirstRow<Sneaker>(
+      where: where?.call(Sneaker.t),
+      orderBy: orderBy?.call(Sneaker.t),
+      orderByList: orderByList?.call(Sneaker.t),
       orderDescending: orderDescending,
       offset: offset,
       transaction: transaction,
     );
   }
 
-  Future<Sneakers?> findById(
+  Future<Sneaker?> findById(
     _i1.Session session,
     int id, {
     _i1.Transaction? transaction,
   }) async {
-    return session.db.findById<Sneakers>(
+    return session.db.findById<Sneaker>(
       id,
       transaction: transaction,
     );
   }
 
-  Future<List<Sneakers>> insert(
+  Future<List<Sneaker>> insert(
     _i1.Session session,
-    List<Sneakers> rows, {
+    List<Sneaker> rows, {
     _i1.Transaction? transaction,
   }) async {
-    return session.db.insert<Sneakers>(
+    return session.db.insert<Sneaker>(
       rows,
       transaction: transaction,
     );
   }
 
-  Future<Sneakers> insertRow(
+  Future<Sneaker> insertRow(
     _i1.Session session,
-    Sneakers row, {
+    Sneaker row, {
     _i1.Transaction? transaction,
   }) async {
-    return session.db.insertRow<Sneakers>(
+    return session.db.insertRow<Sneaker>(
       row,
       transaction: transaction,
     );
   }
 
-  Future<List<Sneakers>> update(
+  Future<List<Sneaker>> update(
     _i1.Session session,
-    List<Sneakers> rows, {
-    _i1.ColumnSelections<SneakersTable>? columns,
+    List<Sneaker> rows, {
+    _i1.ColumnSelections<SneakerTable>? columns,
     _i1.Transaction? transaction,
   }) async {
-    return session.db.update<Sneakers>(
+    return session.db.update<Sneaker>(
       rows,
-      columns: columns?.call(Sneakers.t),
+      columns: columns?.call(Sneaker.t),
       transaction: transaction,
     );
   }
 
-  Future<Sneakers> updateRow(
+  Future<Sneaker> updateRow(
     _i1.Session session,
-    Sneakers row, {
-    _i1.ColumnSelections<SneakersTable>? columns,
+    Sneaker row, {
+    _i1.ColumnSelections<SneakerTable>? columns,
     _i1.Transaction? transaction,
   }) async {
-    return session.db.updateRow<Sneakers>(
+    return session.db.updateRow<Sneaker>(
       row,
-      columns: columns?.call(Sneakers.t),
+      columns: columns?.call(Sneaker.t),
       transaction: transaction,
     );
   }
 
-  Future<List<Sneakers>> delete(
+  Future<List<Sneaker>> delete(
     _i1.Session session,
-    List<Sneakers> rows, {
+    List<Sneaker> rows, {
     _i1.Transaction? transaction,
   }) async {
-    return session.db.delete<Sneakers>(
+    return session.db.delete<Sneaker>(
       rows,
       transaction: transaction,
     );
   }
 
-  Future<Sneakers> deleteRow(
+  Future<Sneaker> deleteRow(
     _i1.Session session,
-    Sneakers row, {
+    Sneaker row, {
     _i1.Transaction? transaction,
   }) async {
-    return session.db.deleteRow<Sneakers>(
+    return session.db.deleteRow<Sneaker>(
       row,
       transaction: transaction,
     );
   }
 
-  Future<List<Sneakers>> deleteWhere(
+  Future<List<Sneaker>> deleteWhere(
     _i1.Session session, {
-    required _i1.WhereExpressionBuilder<SneakersTable> where,
+    required _i1.WhereExpressionBuilder<SneakerTable> where,
     _i1.Transaction? transaction,
   }) async {
-    return session.db.deleteWhere<Sneakers>(
-      where: where(Sneakers.t),
+    return session.db.deleteWhere<Sneaker>(
+      where: where(Sneaker.t),
       transaction: transaction,
     );
   }
 
   Future<int> count(
     _i1.Session session, {
-    _i1.WhereExpressionBuilder<SneakersTable>? where,
+    _i1.WhereExpressionBuilder<SneakerTable>? where,
     int? limit,
     _i1.Transaction? transaction,
   }) async {
-    return session.db.count<Sneakers>(
-      where: where?.call(Sneakers.t),
+    return session.db.count<Sneaker>(
+      where: where?.call(Sneaker.t),
       limit: limit,
       transaction: transaction,
     );

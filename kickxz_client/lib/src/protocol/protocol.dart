@@ -10,10 +10,8 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:serverpod_client/serverpod_client.dart' as _i1;
-import 'example.dart' as _i2;
-import 'sneakers.dart' as _i3;
-export 'example.dart';
-export 'sneakers.dart';
+import 'sneaker.dart' as _i2;
+export 'sneaker.dart';
 export 'client.dart';
 
 class Protocol extends _i1.SerializationManager {
@@ -29,17 +27,11 @@ class Protocol extends _i1.SerializationManager {
     Type? t,
   ]) {
     t ??= T;
-    if (t == _i2.Example) {
-      return _i2.Example.fromJson(data) as T;
+    if (t == _i2.Sneaker) {
+      return _i2.Sneaker.fromJson(data) as T;
     }
-    if (t == _i3.Sneakers) {
-      return _i3.Sneakers.fromJson(data) as T;
-    }
-    if (t == _i1.getType<_i2.Example?>()) {
-      return (data != null ? _i2.Example.fromJson(data) : null) as T;
-    }
-    if (t == _i1.getType<_i3.Sneakers?>()) {
-      return (data != null ? _i3.Sneakers.fromJson(data) : null) as T;
+    if (t == _i1.getType<_i2.Sneaker?>()) {
+      return (data != null ? _i2.Sneaker.fromJson(data) : null) as T;
     }
     return super.deserialize<T>(data, t);
   }
@@ -48,11 +40,8 @@ class Protocol extends _i1.SerializationManager {
   String? getClassNameForObject(Object? data) {
     String? className = super.getClassNameForObject(data);
     if (className != null) return className;
-    if (data is _i2.Example) {
-      return 'Example';
-    }
-    if (data is _i3.Sneakers) {
-      return 'Sneakers';
+    if (data is _i2.Sneaker) {
+      return 'Sneaker';
     }
     return null;
   }
@@ -63,11 +52,8 @@ class Protocol extends _i1.SerializationManager {
     if (dataClassName is! String) {
       return super.deserializeByClassName(data);
     }
-    if (dataClassName == 'Example') {
-      return deserialize<_i2.Example>(data['data']);
-    }
-    if (dataClassName == 'Sneakers') {
-      return deserialize<_i3.Sneakers>(data['data']);
+    if (dataClassName == 'Sneaker') {
+      return deserialize<_i2.Sneaker>(data['data']);
     }
     return super.deserializeByClassName(data);
   }
