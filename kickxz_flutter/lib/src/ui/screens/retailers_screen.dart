@@ -41,8 +41,10 @@ class _RetailersScreenState extends State<RetailersScreen>
                       leading: FlutterLogo(size: 56),
                       title: Text(
                           snapshot.data?.elementAt(index).retailerName ?? ''),
-                      subtitle:
-                          Text(snapshot.data?.elementAt(index).country ?? ''),
+                      subtitle: Text(snapshot.data
+                              ?.elementAt(index)
+                              .globalHeadquarterCountry ??
+                          ''),
                     );
                   });
             } else if (snapshot.connectionState == ConnectionState.waiting) {
