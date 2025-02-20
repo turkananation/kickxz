@@ -1,12 +1,113 @@
 class: Retailers
 table: retailers
 fields:
+    ### This is the name of the retailer
     retailerName: String
+
+    ### This is the website url of the retailer
     websiteUrl: String
-    logo: String
-    country: String
-    officialRetailer: bool
-    officialApiAvailable: bool
-    createdAt: DateTime
+
+    ### This is the logo picture url of the retailer
+    logoPictureUrl: String?
+
+    ### This is the countries the retailer is present in
+    countriesPresentIn: List<String>?
+
+    ### This is the official retailer status of the retailer
+    officialRetailer: bool, default=false
+
+    ### This is the official api status of the retailer
+    officialApiAvailable: bool, default=false
+
+    ### This is the global headquarter country of the retailer
+    globalHeadquarterCountry: String?
+
+    ### This is the global headquarter city of the retailer
+    globalHeadquarterCity: String?
+
+    ### This is the global headquarter address of the retailer
+    globalHeadquarterAddress: String?
+
+    ### This is the global headquarter postal code of the retailer
+    globalHeadquarterPostalCode: String?
+
+    ### This is the global headquarter email of the retailer
+    globalHeadquarterEmail: String?
+
+    ### This is the global headquarter phone number of the retailer
+    globalHeadquarterPhoneNumber: String?
+
+    ### String (e.g.,"Department Store", "Online Retailer", "Specialty Boutique", "Fast Fashion", "Luxury"). This helps categorize the retailer
+    retailerType: String?
+
+    ### List<String> (e.g., ["Clothes", "Sneakers", "Accessories", "Bags", "Jewelry", "Beauty"]). This specifies the main product types they offer.
+    productCategories: List<String>?
+
+    ### String (e.g., "Budget", "Mid-Range", "High-End", "Luxury"). This indicates the general price point of their products.
+    priceRange: String?
+
+    ### List<String> (e.g., ["Men", "Women", "Kids", "Teenagers", "Adults", "Specific Style - e.g., Streetwear, Formal"]). Describes their primary customer base.
+    targetAudience: List<String>?
+
+    ### String (e.g., "Sustainability Focused", "Ethical Sourcing", "Luxury and Exclusivity", "Trendy and Affordable"). Highlights the brand's core values.
+    brandValues: String?
+
+    ### This is the customer service email of the retailer
+    customerServiceEmail: String?
+
+    ### This is the customer service phone number of the retailer denoted in the international format (e.g., +1-800-123-4567) and country/city
+    customerServicePhoneNumber: Map<String, String>?
+
+    ### This is the customer service chat availability of the retailer
+    customerServiceChatAvailable: bool, default=false
+
+    ### This is the store locator url of the retailer
+    storeLocatorUrl: String?
+
+    ### This is the number of physical stores the retailer has
+    numberOfPhysicalStores: int?
+
+    ### List<String> (e.g., ["Standard Shipping", "Express Shipping", "International Shipping", "Free Shipping over $X"]). Details the shipping services they offer.
+    shippingOptions: List<String>?
+
+    ### String? (A brief summary of their return policy, e.g., "30-day returns", "Free returns"). Consider linking to a full return policy page instead of summarizing.
+    returnPolicySummary: String?
+
+    ### This is the Link to their full return policy page
+    returnPolicyUrl: String?
+
+    ### List<String> (e.g., ["Visa", "Mastercard", "PayPal", "Apple Pay", "Google Pay"]). Lists the payment methods they accept.
+    paymentMethods: List<String>?
+
+    ### List<String> (e.g., ["USD", "EUR", "GBP", "JPY", "CNY"]). Lists the currencies they accept.
+    currenciesAccepted: List<String>?
+
+    ### List<String> (e.g., ["English", "Spanish", "French", "German", "Chinese"]). Lists the languages their website supports.
+    languagesSupported: List<String>?
+
+    ### List<String>? (List of social media platforms they are active on, e.g., ["Instagram", "Facebook", "Twitter", "Pinterest"])
+    socialMediaLinks: Map<String, String>?
+
+    ### This is the loyalty program status of the retailer
+    loyaltyProgramAvailable: bool, default=false
+
+    ### This is the affiliate program status of the retailer
+    affiliateProgramAvailable: bool, default=false
+
+    ### Link to their company blog if they have one
+    blogUrl: String?
+
+    ### Link to sign up for their newsletter
+    newsletterSignupUrl: String?
+
+    ### If officialApiAvailable is true, link to the API documentation
+    officialApiDocumentationUrl: String?
+
+    ### List<String>? (List of platforms or services they have official API integrations with, e.g., ["Shopify", "Salesforce", "Google Analytics"])
+    apiIntegrationPartners: List<String>?
+
+    ### This is the time the retailer was created
+    createdAt: DateTime, default=now
+
+    ### This is the time the retailer was last updated
     updatedAt: DateTime?
-    deletedAt: DateTime?
