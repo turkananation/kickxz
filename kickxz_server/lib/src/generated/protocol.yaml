@@ -16,4 +16,3 @@ sneaker:
   - getSneaker:
   - updateSneaker:
   - deleteSneaker:
-  - addSneakersManually:

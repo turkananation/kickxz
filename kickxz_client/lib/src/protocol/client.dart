@@ -143,13 +143,6 @@ class EndpointSneaker extends _i1.EndpointRef {
         'deleteSneaker',
         {'sneaker': sneaker},
       );
-
-  _i2.Future<List<_i5.Sneaker>> addSneakersManually() =>
-      caller.callServerEndpoint<List<_i5.Sneaker>>(
-        'sneaker',
-        'addSneakersManually',
-        {},
-      );
 }
 
 class Client extends _i1.ServerpodClientShared {
