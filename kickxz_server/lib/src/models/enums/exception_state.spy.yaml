@@ -1,0 +1,5 @@
+enum: ExceptionState
+values:
+  - SERVER_ERROR
+  - CONNECTION_ERROR
+  - NOT_FOUND

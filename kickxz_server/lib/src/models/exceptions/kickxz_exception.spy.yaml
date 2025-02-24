@@ -1,0 +1,4 @@
+exception: KickxzException
+fields:
+  message: String
+  errorType: ExceptionState
