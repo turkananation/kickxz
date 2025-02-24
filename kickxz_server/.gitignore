@@ -9,7 +9,7 @@ build/
 doc/api/
 
 # Passwords file
-config/passwords.yaml
+# config/passwords.yaml - Allow for passwords to commited to source control for open source reasons otherwise this file should be added to .gitignore by deleting the starting #
 
 # Firebase service account key for Firebase auth
 config/firebase_service_account_key.json
