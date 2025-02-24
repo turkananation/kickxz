@@ -12,13 +12,15 @@
 import 'package:serverpod/serverpod.dart' as _i1;
 import 'package:serverpod/protocol.dart' as _i2;
 import 'enums/gender.dart' as _i3;
-import 'releases.dart' as _i4;
-import 'retailers.dart' as _i5;
-import 'sneaker.dart' as _i6;
-import 'package:kickxz_server/src/generated/releases.dart' as _i7;
-import 'package:kickxz_server/src/generated/retailers.dart' as _i8;
-import 'package:kickxz_server/src/generated/sneaker.dart' as _i9;
+import 'enums/retailer_type.dart' as _i4;
+import 'releases.dart' as _i5;
+import 'retailers.dart' as _i6;
+import 'sneaker.dart' as _i7;
+import 'package:kickxz_server/src/generated/releases.dart' as _i8;
+import 'package:kickxz_server/src/generated/retailers.dart' as _i9;
+import 'package:kickxz_server/src/generated/sneaker.dart' as _i10;
 export 'enums/gender.dart';
+export 'enums/retailer_type.dart';
 export 'releases.dart';
 export 'retailers.dart';
 export 'sneaker.dart';
@@ -556,52 +558,32 @@ class Protocol extends _i1.SerializationManagerServer {
     if (t == _i3.Gender) {
       return _i3.Gender.fromJson(data) as T;
     }
-    if (t == _i4.Releases) {
-      return _i4.Releases.fromJson(data) as T;
+    if (t == _i4.RetailerType) {
+      return _i4.RetailerType.fromJson(data) as T;
     }
-    if (t == _i5.Retailers) {
-      return _i5.Retailers.fromJson(data) as T;
+    if (t == _i5.Releases) {
+      return _i5.Releases.fromJson(data) as T;
     }
-    if (t == _i6.Sneaker) {
-      return _i6.Sneaker.fromJson(data) as T;
+    if (t == _i6.Retailers) {
+      return _i6.Retailers.fromJson(data) as T;
+    }
+    if (t == _i7.Sneaker) {
+      return _i7.Sneaker.fromJson(data) as T;
     }
     if (t == _i1.getType<_i3.Gender?>()) {
       return (data != null ? _i3.Gender.fromJson(data) : null) as T;
     }
-    if (t == _i1.getType<_i4.Releases?>()) {
-      return (data != null ? _i4.Releases.fromJson(data) : null) as T;
+    if (t == _i1.getType<_i4.RetailerType?>()) {
+      return (data != null ? _i4.RetailerType.fromJson(data) : null) as T;
     }
-    if (t == _i1.getType<_i5.Retailers?>()) {
-      return (data != null ? _i5.Retailers.fromJson(data) : null) as T;
+    if (t == _i1.getType<_i5.Releases?>()) {
+      return (data != null ? _i5.Releases.fromJson(data) : null) as T;
     }
-    if (t == _i1.getType<_i6.Sneaker?>()) {
-      return (data != null ? _i6.Sneaker.fromJson(data) : null) as T;
+    if (t == _i1.getType<_i6.Retailers?>()) {
+      return (data != null ? _i6.Retailers.fromJson(data) : null) as T;
     }
-    if (t == _i1.getType<List<String>?>()) {
-      return (data != null
-          ? (data as List).map((e) => deserialize<String>(e)).toList()
-          : null) as dynamic;
-    }
-    if (t == _i1.getType<List<String>?>()) {
-      return (data != null
-          ? (data as List).map((e) => deserialize<String>(e)).toList()
-          : null) as dynamic;
-    }
-    if (t == _i1.getType<List<String>?>()) {
-      return (data != null
-          ? (data as List).map((e) => deserialize<String>(e)).toList()
-          : null) as dynamic;
-    }
-    if (t == _i1.getType<Map<String, String>?>()) {
-      return (data != null
-          ? (data as Map).map((k, v) =>
-              MapEntry(deserialize<String>(k), deserialize<String>(v)))
-          : null) as dynamic;
-    }
-    if (t == _i1.getType<List<String>?>()) {
-      return (data != null
-          ? (data as List).map((e) => deserialize<String>(e)).toList()
-          : null) as dynamic;
+    if (t == _i1.getType<_i7.Sneaker?>()) {
+      return (data != null ? _i7.Sneaker.fromJson(data) : null) as T;
     }
     if (t == _i1.getType<List<String>?>()) {
       return (data != null
@@ -629,16 +611,42 @@ class Protocol extends _i1.SerializationManagerServer {
           ? (data as List).map((e) => deserialize<String>(e)).toList()
           : null) as dynamic;
     }
-    if (t == List<_i7.Releases>) {
-      return (data as List).map((e) => deserialize<_i7.Releases>(e)).toList()
+    if (t == _i1.getType<List<String>?>()) {
+      return (data != null
+          ? (data as List).map((e) => deserialize<String>(e)).toList()
+          : null) as dynamic;
+    }
+    if (t == _i1.getType<List<String>?>()) {
+      return (data != null
+          ? (data as List).map((e) => deserialize<String>(e)).toList()
+          : null) as dynamic;
+    }
+    if (t == _i1.getType<List<String>?>()) {
+      return (data != null
+          ? (data as List).map((e) => deserialize<String>(e)).toList()
+          : null) as dynamic;
+    }
+    if (t == _i1.getType<Map<String, String>?>()) {
+      return (data != null
+          ? (data as Map).map((k, v) =>
+              MapEntry(deserialize<String>(k), deserialize<String>(v)))
+          : null) as dynamic;
+    }
+    if (t == _i1.getType<List<String>?>()) {
+      return (data != null
+          ? (data as List).map((e) => deserialize<String>(e)).toList()
+          : null) as dynamic;
+    }
+    if (t == List<_i8.Releases>) {
+      return (data as List).map((e) => deserialize<_i8.Releases>(e)).toList()
           as dynamic;
     }
-    if (t == List<_i8.Retailers>) {
-      return (data as List).map((e) => deserialize<_i8.Retailers>(e)).toList()
+    if (t == List<_i9.Retailers>) {
+      return (data as List).map((e) => deserialize<_i9.Retailers>(e)).toList()
           as dynamic;
     }
-    if (t == List<_i9.Sneaker>) {
-      return (data as List).map((e) => deserialize<_i9.Sneaker>(e)).toList()
+    if (t == List<_i10.Sneaker>) {
+      return (data as List).map((e) => deserialize<_i10.Sneaker>(e)).toList()
           as dynamic;
     }
     try {
@@ -654,13 +662,16 @@ class Protocol extends _i1.SerializationManagerServer {
     if (data is _i3.Gender) {
       return 'Gender';
     }
-    if (data is _i4.Releases) {
+    if (data is _i4.RetailerType) {
+      return 'RetailerType';
+    }
+    if (data is _i5.Releases) {
       return 'Releases';
     }
-    if (data is _i5.Retailers) {
+    if (data is _i6.Retailers) {
       return 'Retailers';
     }
-    if (data is _i6.Sneaker) {
+    if (data is _i7.Sneaker) {
       return 'Sneaker';
     }
     className = _i2.Protocol().getClassNameForObject(data);
@@ -679,14 +690,17 @@ class Protocol extends _i1.SerializationManagerServer {
     if (dataClassName == 'Gender') {
       return deserialize<_i3.Gender>(data['data']);
     }
+    if (dataClassName == 'RetailerType') {
+      return deserialize<_i4.RetailerType>(data['data']);
+    }
     if (dataClassName == 'Releases') {
-      return deserialize<_i4.Releases>(data['data']);
+      return deserialize<_i5.Releases>(data['data']);
     }
     if (dataClassName == 'Retailers') {
-      return deserialize<_i5.Retailers>(data['data']);
+      return deserialize<_i6.Retailers>(data['data']);
     }
     if (dataClassName == 'Sneaker') {
-      return deserialize<_i6.Sneaker>(data['data']);
+      return deserialize<_i7.Sneaker>(data['data']);
     }
     if (dataClassName.startsWith('serverpod.')) {
       data['className'] = dataClassName.substring(10);
@@ -704,12 +718,12 @@ class Protocol extends _i1.SerializationManagerServer {
       }
     }
     switch (t) {
-      case _i4.Releases:
-        return _i4.Releases.t;
-      case _i5.Retailers:
-        return _i5.Retailers.t;
-      case _i6.Sneaker:
-        return _i6.Sneaker.t;
+      case _i5.Releases:
+        return _i5.Releases.t;
+      case _i6.Retailers:
+        return _i6.Retailers.t;
+      case _i7.Sneaker:
+        return _i7.Sneaker.t;
     }
     return null;
   }

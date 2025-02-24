@@ -1,0 +1,8 @@
+enum: RetailerType
+serialized: byName
+values:
+  - Department_Store
+  - Online_Retailer
+  - Specialty_Boutique
+  - Fast_Fashion
+  - Luxury
