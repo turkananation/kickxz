@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class ShambaniColors {
+class KickxzColors {
   // Primary Colors
   static const Color primary = Color(0xFF009688); // Example: Blue
   static const Color primaryLight = Color(0xFF26A69A);
