@@ -5,7 +5,7 @@ import 'package:kickxz_flutter/src/ui/screens/releases_screen.dart';
 import 'package:kickxz_flutter/src/ui/screens/retailers_screen.dart';
 import 'package:kickxz_flutter/src/ui/screens/sneakers_screen.dart';
 import 'package:kickxz_flutter/src/ui/screens/wishlist_screen.dart';
-import 'package:kickxz_flutter/src/ui/themes/shambani_light_theme.dart';
+import 'package:kickxz_flutter/src/ui/themes/kickxz_light_theme.dart';
 import 'package:serverpod_flutter/serverpod_flutter.dart';
 
 // Sets up a singleton client object that can be used to talk to the server from
@@ -27,7 +27,7 @@ class KickxzApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Kickxz',
-      theme: ShambaniLightTheme.lightTheme,
+      theme: KickxzLightTheme.lightTheme,
       home: DashboardScreen(),
     );
   }
