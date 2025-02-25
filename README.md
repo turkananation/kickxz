@@ -148,12 +148,12 @@ Distributed under the [MIT License](LICENSE.txt). See `LICENSE.txt` for more inf
 
 ## 📞 Contact
 
-[Your Name/Team Name] - [Your Email] - [Link to your Website/Portfolio (Optional)]
+[Turkana Nation] - [turkananation@gmail.com]
 
 Connect with us on social media:
 
-*   [Twitter](Your Twitter Link - Optional)
-*   [Instagram](Your Instagram Link - Optional)
+*   [Twitter](https://x.com/TurkanaNation)
+*   [Instagram](https://www.instagram.com/turkananation/)
 
 ---
 
