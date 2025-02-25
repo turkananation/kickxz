@@ -148,7 +148,7 @@ Distributed under the [MIT License](LICENSE.txt). See `LICENSE.txt` for more inf
 
 ## 📞 Contact
 
-[Turkana Nation] - [turkananation@gmail.com]
+Turkana Nation - turkananation@gmail.com
 
 Connect with us on social media:
 
