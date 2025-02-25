@@ -144,7 +144,7 @@ Please adhere to the project's coding style and conventions.
 
 ## 📜 License
 
-Distributed under the [MIT License](LICENSE.txt). See `LICENSE.txt` for more information.
+Distributed under the MIT License.
 
 ## 📞 Contact
 
