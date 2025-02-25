@@ -9,7 +9,7 @@ build/
 doc/api/
 
 # Passwords file
-config/passwords.yaml
+# config/passwords.yaml - Committing passwords file to source control for Open Sourcing project for easy access.
 
 # Firebase service account key for Firebase auth
 config/firebase_service_account_key.json
